@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #div1{
+        height: 200px;
+        width: 400px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <button onclick="greetings()">click me</button>
+    <p id="p1"></p>
+    <div id="div1">
+
+    </div>
+</body>
+<script>
+    let p1 = document.getElementById("p1");
+    let div1 = document.getElementById("div1");
+    function greetings(){
+        // let userName = prompt("Enter your name: ")
+        // p1.innerHTML = 'Hello ${userName}, welcome to javascript class.'
+        let color = prompt("Enter your color:");
+        div1.innerHTML = `The background color of this div is ${color}`;
+        div1.style.backgroundColor = color;
+        let width = prompt("Enter your new width:");
+        div1.innerHTML = `The width of this div is ${width}`;
+        div1.style.width = width;
+        let height = prompt("Enter your height:");
+        div1.innerHTML = `The height of this div is ${height}`;
+        div1.style.height = height;
+    }
+
+    console.log("Hello World")
+</script>
+</html>
+
+
+//naming convention in javascripy

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Document</title>
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    padding-right: 20px;
+    width: 350px;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: 8px 6px 8px rgb(0.2, 0.2, 0.2, 0.2);
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+button{
+    color: white;
+    }
+</style>
+</head>
+<body id="body">
+    <div class="container">
+        <button onclick="toog()">black</button>
+        <h2>Sign Up</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <!-- <i onclick="toogle()" class="toggle-password fas fa-eye"></i> -->
+                <div onclick="toogle()"> eye</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirm-password" required>
+                <!-- <i onclick="toogla()" class="toggle-password fas fa-eye"></i> -->
+                 <div onclick="toogla()"> eye</div>
+            </div>
+            <div class="form-group">
+                <button  type="button" onclick="sub()" >Register</button>
+            </div>
+        </form>
+        </div>
+        <button> </button>
+        <br>
+
+        <!-- <div class="container">
+            <button onclick="toog()">black</button>
+            <h2>Login </h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="usernameone" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <i onclick="toogle()" class="toggle-password fas fa-eye"></i>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <button  type="button" onclick="sub()" >Register</button>
+                </div>
+            </form>
+            </div> -->
+
+
+        <input id="rand" type="text">
+        <button onclick="check()"> check</button>
+
+        
+        <!-- <button onclick ="interClear()">clear </button> -->
+</body>
+<script>
+    let user1 = username.value;
+     let email = document.getElementById("email").value;
+     let password = document.getElementById("password").value;
+    let arr = [];
+      
+    confirmPassword = document.getElementById("confirmPassword").value
+      let passwordIcon = document.querySelector(".toggle-password")
+    let body = document.getElementById("body")
+    let container = document.querySelector(".container")
+    let backgroundColor = "rgb(250, 247, 247)";
+    
+    ;
+    function toog(){
+        if (backgroundColor == "rgb(250, 247, 247)"){
+            body.style.backgroundColor = "rgb(0, 0, 0)";
+            container.style.backgroundColor = "rgb(122, 115, 115)";
+            container.style.color = "rgb(250, 247, 247)"
+            backgroundColor = "rgb(0, 0, 0)"
+            body.style.color = "white";
+            color = "white"
+        }else if (backgroundColor == "rgb(0, 0, 0)"){
+            body.style.backgroundColor = "rgb(250, 247, 247)";
+            container.style.backgroundColor = "rgb(250, 247, 247)";
+            backgroundColor = "rgb(250, 247, 247)"
+            body.style.color = "black";
+            color = "black"
+        }
+    }
+
+    function toogle(){
+        if (passwordInput.type === "password"){
+            passwordInput.type = "text"
+            // passwordIcon.classList.remove("fa-eye");
+            // passwordIcon.classList.add("fa-eye-slash");
+        }else{
+            passwordInput.type = "password";
+        }
+    }
+    function toogla(){
+        if (passwordIn.type === "password"){
+            passwordIn.type = "text"
+        }else{
+            passwordIn.type = "password";
+        }
+    }
+     function sub(){
+        if (username.value == "" || password.value == "" || email.value == ""){
+            alert("input field can not be  empty")
+        } else if(password.value !== confirmPassword.value){
+            alert("password does not match")
+        } else if(password.value == confirmPassword.value) {
+            alert ("registration successful")
+        }
+    
+
+     const userInfo = {user:user1,password:password,email:email}
+     arr.push(userInfo)
+        console.log(userInfo)
+     }
+
+     
+     
+
+
+
+
+
+    //  let num = Math.floor(Math.random()* 9)
+    //  console.log(num)
+     
+    //  function check(){
+    //     if(rand.value !== num ){
+    //     alert("You are Wrong try again ")
+
+    //  } else if (rand.value == num ){
+    //     alert("Congratulations")
+    //  }
+    // }
+
+
+
+
+    // setTimeout(()=>{
+    //     alert("you have delayed me")
+    // },5000)
+
+
+    //  let theLog = setInterval(()=>{
+    //     console.log("line 2")
+    // },5000)
+
+    // function interClear(){
+    //     clearInterval(theLog)
+    // }
+     
+     <!-- //username,password,email,confirmpassword,register/submit
+</script>
+</html>

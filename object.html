@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+ </body>
+ <script>
+    //object in javascript
+    let age = 55;
+    let test = {
+        name:"TestRam",
+        age: 23,
+        colors: ["red", "green", "blue", "purple", "indigo", "violet"],
+        inSingle: true,
+        hasAMacBook: undefined,
+        address: {
+            street:"No. 1, TestRam street",
+            city:"Lagos",
+            state:"Lagos",
+            country:"Nigeria",
+        },
+        doubleAge:function(){
+            return this.age * 2
+        }
+    }
+
+    let num =  test.doubleAge()
+    console.log(num)
+ </script>
+ </html>

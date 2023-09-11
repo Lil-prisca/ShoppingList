@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //operators in  javascript
+
+    //arithmetic operstorss
+    //addition
+    console.log(10 + 3);
+
+    //subtraction
+    console.log(30 - 15);
+
+    //multiplication
+    console.log(30 * 15);
+
+    //division
+    console.log(30 /15);
+
+    //modulus
+    //returns the remainder of a division operator
+    console.log(30 % 20);
+
+    //exponential 
+    //returns the results of raising the first operand to the power of the second operands
+    console.log(5 ** 7);
+
+    //increment operator
+    //increase value by 1
+    let x = 11;
+    x++;
+    console.log(x++);
+
+    //decrement
+    //decrease value by 1 
+    let y = 10;
+    y--;
+    console.log(y--);
+
+
+    //assignment operators
+    let  b = 10;
+    let a = 5
+    console.log(a);
+
+    //addition assignment
+    b += a; 
+    //assigning the value of b+a to b
+    console.log(b);
+
+    //subtraction assignment
+    b -= a;
+    //assigning the value of b-a to b
+    console.log(b);
+
+    //multiplication assignment
+    let c = 5
+    let d = 15
+    c *= d;
+    console.log(c);
+    
+    //division assignment
+    c /= d;
+    console.log(c);
+
+    //modulus assignment
+    d %= c;
+    console.log(d);
+
+    //exponential assignment
+    let e = 5;
+    let f =  2
+    e **= f;
+    console.log(e);
+
+    //comparison operators
+    let g = 10
+    let h  = 20
+    console.log(g==h);
+
+    let test = "33";
+    let test2 = 33;
+    console.log(test == test2);// compar eonly the vaue
+    console.log(test === test2);// it compares the value and the datatype
+
+    console.log(g != h);// returns true if the operands are not equal
+    console.log( test != test2);// compares nly the value
+    console.log( test !== test2); //returns if the operands are not equal and of the same type. it compare the value and the data type
+
+    let test3 = "obinna";
+    let test4 =  "pelumi"
+    console.log( test3 === test4);//returns true if the left is the same as the right
+
+    console.log(g > h);// returns true if the left operand is greater than the right operand
+    console.log(g <= h);// returns true if the left operands is less than or equal to the right operand
+
+    //logical operators
+    //logical and = &&
+    //logical or = ||
+    //logical not = !
+    //logical and
+    let i = 10;
+    let j = 20;
+    let k = 30;
+    console.log( i < j && j < k); //return true if both are true
+    console.log( i < j && j > k);
+    console.log( i < j || j > k); //returns true if one of the opersnd is true
+    console.log( !(i < j && j < k));// returns true if the operand is false
+    
+
+    //tenary operator
+    let l = 10;
+    let m = 20;
+    l === m ? alert("Yes it is") : alert("No it isn't");
+    // what comes atfer ? is what should happen if what comes befor the "?" is true and what comes after ":" is what should happen if what comes before "? is false"
+
+
+
+
+
+</script>
+</html>

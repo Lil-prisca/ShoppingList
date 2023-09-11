@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"> </p>
+        <button id="number" onclick="display(1)">1</button>
+        <button   onclick="operators('+')"> + </button>
+        <button id="number" onclick="display(3)">3</button>
+
+        <button onclick="calculate()">=</button>
+
+        <button onclick="clearResult()">C</button>
+        
+    
+</body>
+<script>
+let p1 = document.getElementById('p1');
+let show = document.getElementById('show')
+let operators = ' ';
+// let result = " ";
+
+ show = (value) => {
+    p1.innerHTML += value;
+}
+
+function operators(value) {
+    p1.innerHTML == " " + value + " ";
+    operators = value;
+}
+function clearResult(){
+    p1 = " ";
+    document.getElementById("p1").value = p1;
+    
+}
+ function calculate(){
+    const expression = p1.innerHTML.trim;
+    let operand = expression.split( "" + operators + "");
+
+
+
+    let b = Number(operand[0]);
+    let c = Number(operand[1]);
+
+    switch(operator){
+        case'+':
+        result = b + c
+        break;
+        case'-':
+        result = b - c
+        break;
+        case'/':
+        result = b / c
+        break;
+        case'*':
+        result = b * c
+        break;
+        case'%':
+        result = b % c
+        break;
+        default:
+            result = 'invalid Operator'
+    }
+ }
+</script>
+
+</html>

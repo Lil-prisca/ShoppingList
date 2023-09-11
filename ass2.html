@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ 
+</style>
+<body>
+    <button onclick="greetings()">click me</button>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <p id="p6"></p>
+    <div id="div1">
+
+    </div>
+</body>
+<script>
+    let p1 = document.getElementById("p1")
+    let p2 = document.getElementById("p2")
+    let p3 = document.getElementById("p3")
+    let p4 = document.getElementById("p4")
+    let p5 = document.getElementById("p5")
+    let div1 = document.getElementById("div1")
+
+    function greetings(){
+let cool = prompt("Enter a String:");
+p1.innerHTML = `The string  is ${cool}`;
+p2.innerHTML = `The lenghth of the string is ${cool.length} `;
+p3.innerHTML = `The String In Uppercase is ${cool.toUpperCase()}`;
+p4.innerHTML = `The String In Lowercase is ${cool.toLowerCase()}`;
+p5.innerHTML = `The index of "A" is ${cool.search("a")}`;
+if(cool.search("javascript") == -1){
+    p6.innerHTML = `The String javascript does not exist`
+} else if(cool.search("javascript") != -1){
+    p6.innerHTML = `The String javascript Exist`
+}
+// p4.innerHTML = `The String In Lowercase is ${cool.toLowerCase()}`;
+}
+</script>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..//bootstrap/css/bootstrap.min.css">
+    <!-- <script src = "../bootstrap/js/bootstrap.min.js"> -->
+    <title>Document</title>
+</head>
+<style>
+   #one{
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 350px;
+    /* display: flex; */
+    border-radius: 10px;
+    border: 1px solid #a5a3a3;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-left: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+
+   }
+   #shopList{
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    width: 800px;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    margin-top: 50px;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    
+   }
+   .btn-primary{
+    border: none;
+    background-color: #414142;
+    width: 100px;
+   }
+   #inp2, #inp1, #inp3{
+    width: 450px;
+   }
+   #tot{
+    margin-left: 350px;
+    margin-top: -35px;
+   }
+   #tott{
+    flex-wrap: wrap;
+   }
+</style>
+<body>
+    <div id="one" >
+        <h3 class="class-header text-center">SHOPING LIST</h3>
+       <div class="col p-3">
+        <input class="form-control" type="text" id="inp1" placeholder="ITEM">
+       </div>
+       <div class="mb p-3">
+        <input class="form-control" type="number" id="inp2" placeholder="PRICE">
+       </div>
+       <div class="mb p-3">
+        <input  class="form-control" type="number" id="inp3" placeholder="QUANTITY">
+       </div>
+        
+        <div id="tott" class="p-3">
+        <button  onclick="submit()" type="submit" class="btn btn-primary btn-block ">submit</button>
+        <p id="tot"></p>
+        </div>
+    </div>
+    <div id="shopList">
+        <!-- <div class="col p-3 shadow d-flex justify-content-between">
+            <p>Item: ${item}</p>
+            <p>Price: ${price},</p>
+            <p> Quantity: ${quantity}</p>
+            <button   type="submit" class="btn btn-sm  btn-primary btn-block mb-2  ">Edit</button>
+            <br>
+            <button   type="submit" class="btn btn-sm  btn-primary btn-block  mb-2">Delete</button> 
+        </div> -->
+    </div>
+</body>
+<script>
+     
+    let itemArray =[];
+
+
+    function submit(){
+        let item = document.getElementById("inp1").value 
+      let  price = document.getElementById("inp2").value 
+      let  quantity = document.getElementById("inp3").value 
+      let total = price * quantity;
+       const obj = {name:item,price:price,quantity:quantity,total:total}
+       itemArray.push(obj);
+       console.log(obj);
+       let sum = itemArray.reduce((total,item)=>{
+        return total + item.total
+    },0)
+    document.getElementById("tot").innerHTML =`Total: ${sum}`;
+
+    //    let stringArray = JSON.stringify(itemArray);
+    //    localStorage.setItem("Items", stringArray);
+
+       displayList()
+    }
+
+    function displayList(){
+       let items = "";
+       itemArray.forEach((i,index) =>{
+        items += `<div class="col p-3 shadow d-flex justify-content-between">
+            <p>Item: ${i.name}</p>
+            <p>Price: ${i.price}</p>        
+            <p> Quantity: ${i.quantity}</p>
+            <p> sub-Total: $${i.total}</p>
+            <button  onclick="editItem(${index})" type="submit" class="btn btn-sm  btn-primary btn-block mb-2  ">Edit</button>
+            <br>
+            <button onclick="deleteI(${index})"  type="submit" class="btn btn-sm  btn-primary btn-block  mb-2">Delete</button> 
+        </div>`
+       })
+       document.getElementById("shopList").innerHTML = items;
+
+       let stringArray = JSON.stringify(itemArray);
+       localStorage.setItem("Items", stringArray);
+
+       }
+
+       function editItem(index) {
+    // Get the item to edit from the array
+    const itemToEdit = itemArray[index];
+
+     // Prompt the user for new values
+     const newName = prompt("Edit item name:", itemToEdit.name);
+    const newPrice = prompt("Edit item price:", itemToEdit.price);
+    const newQuantity = prompt("Edit item quantity:", itemToEdit.quantity);
+    
+    if (newName !== null && !isNaN(newPrice) && !isNaN(newQuantity)) {
+        // Update the item's properties with the new values
+        itemToEdit.name = newName;
+        itemToEdit.price = newPrice;
+        itemToEdit.quantity = newQuantity;
+        itemToEdit.total = newPrice * newQuantity;
+
+        let sum = itemArray.reduce((total,item)=>{
+        return total + item.total
+    },0)
+    document.getElementById("tot").innerHTML =`Total: ${sum}`;
+
+        // Update the displayed list
+        displayList();
+    }
+}
+
+       function deleteI(index) {
+    itemArray.splice(index, 1); 
+    displayList();
+} 
+</script>
+</html>

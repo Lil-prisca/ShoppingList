@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button, input {
+    width: 150px;
+    height: 50px;
+    font-size: 2.2em;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #807d7d;
+    border-radius: 5px;
+}
+p {
+    font-size: 3.2em;
+}
+    </style>
+<body>
+    <input type="number" id="po">
+    <input type="number" id="pt">
+    
+    <button onclick="mul()">
+        Click Me
+    </button>
+    
+        <p id="me">
+
+        </p>
+    
+</body>
+<script>
+    // const ar = [1,2,3,4,5,6,7,8,9];
+    // for(a = 0; a < ar.length; a++){
+    //     const ment = ar[a];
+    //     console.log(ment * 2);
+    // }
+
+    let test = document.getElementById('po');
+    let p2 = document.getElementById('pt');
+    let me  = document.getElementById('me')
+    
+function mul(){
+       let r = "";
+    for(let t = 1; t <= p2.value ; t++) {
+        let mulres = test.value * t;
+       r += `${test.value} * ${t} = ${mulres} <br>` 
+    }
+    me.innerHTML = r;
+}
+    // } while (test<= p2)
+
+</script>
+</html>

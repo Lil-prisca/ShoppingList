@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+</body>
+<script>
+    //array iterationnmethods in javascript
+    const arr1 = [10,20,30,40,50,60,70,80,90];
+    arr1.forEach((item, index)=>{
+        console.log(item * 3)
+    })
+
+    let test = arr1.map((item,index)=>{
+        return item * 5
+    })
+    console.log(test)
+    let test2 = arr1.filter((item,index)=>{
+        return item % 3 === 0
+    })
+
+    let teest = arr1.filter((item,index)=>{
+        return prompt(`change array`) 
+    })
+    console.log(test2)
+
+    let test3 = arr1.find((item,index)=>{
+        return item % 3 === 0
+    })
+    console.log(test3)
+
+    let test4 = arr1.reduce((total,item)=>{
+        return total + item
+    },0)
+    console.log(test4)
+
+    const arr2 = [
+        {name:"test", age:1110},
+        {name:"test", age:1111},
+        {name:"test", age:1112},
+        {name:"test", age:1113},
+        {name:"test", age:1114},
+        {name:"test", age:1115},
+        {name:"test", age:1116},
+        {name:"test", age:1117},
+        {name:"test", age:1118},
+    ]
+    let sum = arr2.reduce((total,item)=>{
+        return total + item.age
+    },0)
+    console.log(sum)
+
+
+    //local stroage in javascript
+    localStorage.setItem("name","Obinna");
+    let name = localStorage.getItem("name");
+    console.log(name);
+    // localStroage.removeItem("name")
+
+    let testArr = [
+        {name:"TestRam1", age: 1111, color:"Grey"},
+        {name:"TestRam2", age: 1112, color:"Black"},
+        {name:"TestRam3", age: 1113, color:"White"},
+        {name:"TestRam4", age: 1114, color:"Blue"},
+        {name:"TestRam5", age: 1115, color:"Green"},
+        {name:"TestRam6", age: 1116, color:"Purple"},
+    ]
+
+    let stringArr = JSON.stringify(testArr);
+    localStorage.setItem("testArr", stringArr);
+    let newTest = localStorage.getItem("testArr");
+    let testArr2 = JSON.parse(newTest);
+    console.log(testArr2);
+
+    // localStorage.clear()
+    </script>
+</html>

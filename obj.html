@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #card{
+            width: 200px;
+            height: 200px;
+            border: 1px solid lightgray;
+            box-shadow: ;
+            border-radius: 8px;
+            margin-top: 5px;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Shopping List</h1>
+        <input id="item" type="text">
+        <input id="qty" type="number">
+        <input id="price" type="number">
+        <button onclick="addToList()"> submit</button>
+        <table>
+            <thread>
+                <tr>
+                    <th>S/N</th>
+                    <th>items</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thread>
+            <tbody id="disp">
+
+            </tbody>
+        </table>
+        <div id="card">
+            <input id="item" type="text">
+        <input id="qty" type="number">
+        <input id="price" type="number">
+        <button onclick="editTodo()"> Save</button>
+        </div>
+        <button onclick="car">Card</button>
+
+        <button onclick="add()"> + </button>
+        <span id="number"></span>
+        <button onclick="min()"> - </button>
+        
+        <button onclick="prev()"> Pre </button>
+        <span id="erm"></span>
+        <button onclick="next()"> Next </button>
+
+    </main>
+</body>
+<script>
+    let arr = 0;
+    let arr1 =  [ "me", "you","him", "she", "they", "them"];
+    erm.innerHTML = arr1[arr];
+
+    function next(){
+        if(arr < arr1.length -1){
+    arr++;
+    erm.innerHTML = arr1[arr];
+    }else{
+        arr = 0
+        erm.innerHTML = arr1[arr];
+    }
+}
+     function prev(){
+        if (arr > 0){
+            arr--;
+            erm.innerHTML = arr1[arr];
+        }
+     }
+    let num = 0;
+    num
+    number.innerHTML = num
+    function add(){
+        if ( num > 9){
+            alert("max number used")
+            return
+        }else{
+            number.innerHTML = num++ 
+        console.log(number)
+        }
+    }
+    function min(){
+        if (num <-10){
+            alert("min number exceeded")
+    }else{
+        number.innerHTML = num--;
+        console.log(number)
+    }
+    }
+    let list = []
+    let qty = document.getElementById("qty");
+    let item = document.getElementById("item");
+    let price = document.getElementById("price");
+    let disp = document.getElementById("disp")
+    function addToList(){
+     let data = {
+        item: item.value,
+        qty: qty.value,
+        price: price.value
+    }
+    list.push(data)
+    console.log(list);
+display()
+}
+function display(){
+    disp.innerHTML = " "
+    for(let index = 0; index < list.length; index++){
+        const element = list[index];
+        disp.innerHTML += `
+        <tr>
+            <td> ${index}</td>
+            <td> ${element.item}</td>
+            <td> ${element.qty}</td>
+            <td> ${element.price}</td>
+            <td>
+                <button onclick = " ed(${index})"> edit </button>
+                <button onclick="del(${index})"> del </button>
+                </td>
+                </tr>
+        `
+    }
+}
+
+function del(ndex){
+    list.splice(ndex,1);
+    display()
+}
+// function ed(index) {
+//     // Get the item to edit from the array
+//     const itemToEdit = list[index];
+
+//      // Prompt the user for new values
+//      const newitem = prompt("Edit item name:", itemToEdit.item);
+//     const newPrice = prompt("Edit item price:", itemToEdit.price);
+//     const newqty = prompt("Edit item quantity:", itemToEdit.qty);
+    
+//     if (newitem !== null && !isNaN(newPrice) && !isNaN(newqty)) {
+//         // Update the item's properties with the new values
+//         itemToEdit.item = newitem;
+//         itemToEdit.price = newPrice;
+//         itemToEdit.qty = newqty;
+
+//         display();
+//     }
+// }
+function ed(){
+    
+}
+
+function editTodo(){
+let data = {
+    item: edititem.value,
+        qty: editqty.value,
+        price: editprice.value
+}
+list.splice (theIndex, 1, data)
+display()
+card.style.display = "none"
+}
+</script>
+</html>

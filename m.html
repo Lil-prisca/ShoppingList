@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* background-color: #161515; */
+    background-image: url(..//pic/oliver-hae-h3pU3m-Eduk-unsplash.jpg);
+background-size: cover;
+    
+}
+
+
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 270px;
+}
+
+#p1 {
+    width: 220px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    background-color: #807d7d;
+    color: #fffdfd;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #807d7d;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #222020;
+    color: white;
+}
+</style>
+<body>
+    <div class="calculator">
+    <input type="text" id="p1" >
+    <div class="buttons">
+        <button class="button" onclick="display(1)">1</button>
+        <button class="button" onclick="display(2)">2</button>
+        <button class="button" onclick="display(3)">3</button>
+        <button class="button" onclick="operators('+')">+</button>
+        <br>
+        <button class="button" onclick="display(4)">4</button>
+        <button class="button" onclick="display(5)">5</button>
+        <button class="button" onclick="display(6)">6</button>
+        <button class="button" onclick="operators('-')">-</button>
+        <br>
+        <button class="button" onclick="display(7)">7</button>
+        <button class="button" onclick="displayr(8)">8</button>
+        <button class="button" onclick="display(9)">9</button>
+        <button class="button" onclick="operators('*')">*</button>
+        <button class="button" onclick="clearResult()">C</button>
+        <button class="button" onclick="display(0)">0</button>
+        <button class="button" onclick="operators('.')">.</button>
+        <button class="button" onclick="operators('/')">/</button>    
+        <button class="button" onclick="operators('%')">mod</button>
+       
+        <!-- Add more buttons for numbers and operators -->
+
+        <button class="button" onclick="operators('**')">^</button>
+        
+        <button class="button" onclick="calculate('Math.sqrt()')">√</button>
+        <button class="button" onclick="calculate()">=</button>
+    </div>
+    </div>
+</body>
+<script>
+    let p1 = document.getElementById('p1'); 
+    let dis1;
+    let dis2;
+    
+    // let operators;
+    
+let show =  " ";
+
+function display(number) {
+    show += number;
+   p1.value = show;
+}
+function operators(a) {
+    show +=  a ;
+    dis1 = p1.value;
+    p1.value = show;
+}
+
+function clearResult(){
+    show = " ";
+    p1.value = show;  
+}
+function add (a){
+add = '+';
+
+}
+function calculate(){
+    // dis1 = p1.value;
+    dis2 = p1.value;
+    add = '+';
+    mul = '*';
+    add = '+';
+    if ( operators === '+'){
+    p1.value = Number(dis1) + Number(dis2)
+    }  else if ( a === '-'){
+    p1.value = Number(dis1) - Number(dis2)
+    }  else if ( a === '*'){
+    p1.value = Number(dis1) * Number(dis2)
+    }
+}
+// function calculate(){
+//     let userInput = p1.value;
+//     let result = Function("return " + userInput)();
+// // console.log(result)
+// p1.value = result
+// }
+
+
+//  function calculate(){
+//     let expression = p1.value.trim();
+//     let operands = expression.split(' ' + operators + ' ');
+
+//     let b = Number(operands[0]);
+//     let operators = (operands[1])
+//     let c = Number(operands[2]);
+
+//     switch(operators){
+//         case'+':
+//         result = b + c;
+//         break;
+//         case'-':
+//         result = b - c;
+//         break;
+//         case'/':
+//         result = b / c;
+//         break;
+//         case'*':
+//         result = b * c;
+//         break;
+//         case'%':
+//         result = b % c;
+//         break;
+//         default:
+//             result = 'invalid Operator'
+//     }
+//  }
+</script>
+</html>

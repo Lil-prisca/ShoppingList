@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn"> Text Color</button>
+    <p id="textToChange">Text</p>
+</body>
+<script>
+    const button = document.getElementById("btn")
+    const textToChange = document.getElementById("textToChange")
+
+    button.onclick("click",() =>{
+        textToChange.style.color = ""
+        textToChange.style.color === "dark" ? "light" : "dark"
+    })
+</script>
+</html>

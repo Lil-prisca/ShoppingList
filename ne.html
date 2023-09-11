@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="prev()"> Pre </button>
+        <span id="erm"></span>
+        <button onclick="next()"> Next </button>
+</body>
+<script>
+    let arr = 0;
+     let arr1 =  [ "me", "you","him", "she", "they", "them"];
+    erm.innerHTML = arr1[arr];
+
+    function next(){
+        if(arr < arr1.length -1){
+     arr++;
+     erm.innerHTML = arr1[arr];
+        } else{
+            arr = 0;
+            erm.innerHTML = arr1[arr];
+        }
+    }
+    function prev(){
+    if (arr > 0) {
+        arr--;
+        erm.innerHTML = arr1[arr];
+    }
+}
+</script>
+</html>

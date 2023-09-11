@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #div1{
+        width :300px;
+        height: 300px;
+        border : 1px solid black;
+        border-radius : 10px;
+    }
+</style>
+<body>
+    <!-- <input type="text" id="input1">
+    <button onclick="changeColor()">click me</button>
+    <div on id="div1"></div> -->
+
+    <button onclick="display(1)">1</button>
+    <button onclick="display('+')">+</button>
+    <button onclick="display(3)">3</button>
+    <button onclick="display('=')">=</button>
+    <p id="p1"></p>
+</body>
+<script>
+ let p1 = document.getElementById("p1")
+ const display = (a) => {
+    p1.innerHTML += a
+ }
+
+// let input1 = document.getElementById("input1");
+// let div1 = document.getElementById("div1");
+// function changeColor(){
+//     let color = input1.value;
+//     div1.style.backgroundColor = color;
+//     div1.innerHTML = `The background color of this div is ${color}`
+// }
+    //functions in javascripts
+    //function statement
+    // function addNum(){
+
+    // }
+    
+
+// const addNum2 =function(){
+
+// }
+// const addNum3 = () =>{
+
+// }
+// let num1 = 20;
+// let num2 = 5;
+// function addNum(){
+// let addition = num1 + num2 ;
+// let subtraction = num1 - num2;
+// let division = num1 / num2;
+// let multiplication = num1 * num2;
+// let mod = num1 % num2;
+// return[ addition, subtraction,multiplication,division,mod]
+//     }
+//     addNum();
+//     let test = addNum();
+//     console.log(test);
+
+  
+// function addNum( num1, num2){
+// let addition = num1 + num2 ;
+// let subtraction = num1 - num2;
+// let division = num1 / num2;
+// let multiplication = num1 * num2;
+// let mod = num1 % num2;
+// return[ addition, subtraction,multiplication,division,mod]
+//     }
+//     // addNum(20,15);
+//     let test = addNum( 20,15);
+//     console.log(test);
+
+//     function changeColor(){
+
+//     }
+
+
+
+</script>
+</html>

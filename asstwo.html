@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..//icofont/icofont.min.css">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        background-color: rgb(91, 90, 92);
+        margin: 5px;
+    }
+    #me {
+        width: 350px;
+        height: 250px;
+        margin: center;
+        background-color: bisque;
+        /* margin-top: 100px; */
+        border-radius: 7px;
+        /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    
+    }
+    marquee , p{
+        background-color: bisque;
+        text-align: center;
+        font-style: italic;
+    }
+    #input1{
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid black;
+        height: 25px;
+        margin-top: 10px;
+    }
+    #div1{
+        align: center;
+        height: 40px;
+        width: 170px;
+        margin: 20px;
+        padding-top: 5px;
+        background-color: white;
+        border-radius: 10px;
+        border: 0.5px solid white;
+    }
+    button{
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid black;
+        height: 25px;
+        margin-top: 10px;
+    }
+    button:hover{
+        color: brown;
+    }
+   #one{
+            height: 100px;
+            width: 100px;
+            background-color: brown;
+            position: relative;
+            animation-name: daniel;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes daniel{
+            0%{
+                left: 0;
+            }
+            25%{
+                left: 800px;
+                top: 0px;
+                background-color:cyan ;
+                transform: rotate(100deg);
+                box-shadow: 150px 0 green, 0 -150px 0 blue,;
+            }
+            50%{
+                left: 800px;
+                background-color:rebeccapurple ;
+                transform: rotate(170deg);
+                box-shadow: 150px 0 green, 0 -150px  blue, -150px 0 maroon;
+            }
+            75%{
+                left: 800px;
+                top: 400px;
+                background-color:cyan ;
+                transform: rotate(250deg);
+                box-shadow: 150px 0 green, 0 -150px 0 blue,-150px 0 maroon, ;
+            }
+            100%{
+                left: 0;
+                top: 0;
+                background-color:cyan ;
+                transform: rotate(750deg);
+                box-shadow: 150px 0 green, 0 -150px 0 blue,-150px 0 maroon, 0 150px coral;
+        }
+    }
+</style>
+<body>
+    <div id="one"></div>
+    <center>
+    <div id="me">
+        <marquee>
+            Welcome to This Grading System
+        </marquee>
+        <p>
+            GRADING SYSTEM
+        </p>
+        <input type="text" id="input1">
+        <button onclick="showResult()" style="font-style: italic;">Check</button>
+        <br>
+
+        <div id="div1">
+            
+        </div>
+        <p> No matter your Result you can do better next time</p>
+    </di>
+</center>
+</body>
+<script>
+
+    let input1 = document.getElementById("input1");
+    let div1 = document.getElementById("div1");
+    var img = document.getElementById("icofont-crying")
+function showResult(){
+    let score  = input1.value;
+    if(score < 20){
+        div1.innerHTML = ` F - You failed Your Exams`
+}else  if(score < 30){
+        div1.innerHTML = ` E - You got Good Your Exams`
+}else  if(score < 45){
+        div1.innerHTML = ` D - You Pass Your Exams`
+}else if( score < 50){
+    div1.innerHTML = "C - You have a credit in  Your Exams"
+}else if( score < 70){
+    div1.innerHTML = " B - You got excellent Your Exams"
+}else if( score <= 100){
+    div1.innerHTML = " A+ You Aced Your Exams"
+}
+
+}
+</script>
+</html>

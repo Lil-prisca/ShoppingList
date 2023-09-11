@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //array methods
+    let test   =[1,2,3,4,5,6,7,8,9,0]
+    console.log(test.toString())
+    console.log(test.join(" "))
+    // console.log(test);
+
+    const test2 = ["banana","Apple", "Orange", "Pineapple", "Water melon", "carrot" ];
+    console.log(test2.pop());
+    console.log(test2);
+    console.log(test2.push("strawberry"));
+    console.log(test2);
+    test2.shift();
+    console.log(test2);
+    test2.unshift("Guava");
+    console.log(test2);
+
+    console.log(test2[3]);
+
+    test2[3] = "pawpaw";
+    console.log(test2);
+    
+    test2[test2.length] = "fish";
+    console.log(test2);
+
+    const test3 = [1,2,3,4,5];
+    const test4 = [6,7,8,9,0];
+    test5 = test3.concat(test4);
+    console.log(test5);
+
+    const test6 = ["chelsea", "liverpool", "arsenal", "realmadrid", "barcelona", "athletico de madrid"]
+    const test7 = test6.slice(3);
+    console.log(test7);
+    const test8 = test6.slice(0,3);
+    console.log(test8);
+
+     const test9 = ["blue", "red","grey","black", "violet", "white", "brown"]
+     test9.splice(3,3,"green","indigo","nude")
+     console.log(test9);
+
+     const test10 = ["beans","rice", "bread", "spagetti","yam", "potatoes"];
+     test10.splice(2,1);
+     console.log(test10);
+
+     //array and object destructing 
+     let test11 = ["Nana","semilore","Obinna","dara","pelunmi"];
+
+     let [Nana,semilore,obinna,dara,pelumi] = test11
+     console.log(pelumi);
+
+     const ram = {
+        name: "Ram",
+        age:1111,
+        isFood:true,
+        ispet: false,
+        color: "white"
+     }
+
+     ram.splice
+     let{name, age,color} = ram;
+     console.log(age);
+
+
+
+     //spread operators
+     let arr1 = [1,2,3,4,5];
+     let arr2 =[...arr1,6,7,8,9,0]
+     console.log(arr2);
+
+     let obj1 = {
+        name:"test",
+        age:555,
+        color:"black"
+     };
+     let obj2 = {
+        ...obj1,
+        isBig:undefined,
+        club:"liverpool"
+     };
+     console.log(obj2)
+</script>
+</html>

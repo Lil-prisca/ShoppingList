@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color:rgb(255, 255, 255);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .container {
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        padding-right: 20px;
+        width: 350px;
+        text-align: center;
+        margin-top: 50px;
+        box-shadow: 8px 6px 8px rgb(0.2, 0.2, 0.2, 0.2);
+    }
+    
+    .container h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    
+    .form-group input {
+        width: 250px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    
+    .form-group button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .form-group button:hover {
+        background-color: #0056b3;
+    }
+    button{
+        color: white;
+        }
+    </style>
+<body>
+    <body id="body">
+        <div class="container">
+            <button onclick="toog()">black</button>
+            <h2>Sign Up</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <!-- <i onclick="toogle()" class="toggle-password fas fa-eye"></i> -->
+                    <div onclick="toogle()"> eye</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirm-password" required>
+                    <!-- <i onclick="toogla()" class="toggle-password fas fa-eye"></i> -->
+                     <div onclick="toogla()"> eye</div>
+                </div>
+                <div class="form-group">
+                    <button  type="button" onclick="sub()" >Register</button>
+                </div>
+            </form>
+            </div>
+            <button> </button>
+            <br>
+    
+            <div class="container">
+                <button onclick="toog()">black</button>
+                <h2>Login </h2>
+                <form>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="usernameone" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="login-password" name="password" required>
+                        <i onclick="toogle()" class="toggle-password fas fa-eye"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <button  type="button" onclick="reg()" >Register</button>
+                    </div>
+                </form>
+                </div>
+</body>
+<script>
+ let users = []
+ let username = document.getElementById("username");
+ let password = document.getElementById("password");
+ let email = document.getElementById("email");
+ let confirmPassword = document.getElementById("confirmPassword").value;
+
+function sub(){
+        if (username.value == "" || password.value == "" || email.value == ""){
+            alert("input field can not be  empty")
+        } else if(password.value !== confirmPassword.value){
+            alert("password does not match")
+        } else if(password.value == confirmPassword.value) {
+            alert ("registration successful")
+        }
+    let user = {
+    user:username.value,
+    password:password.value,
+    email:email.value
+ }
+ users.push(user);
+ console.log(users)
+}
+function reg (){
+    if(users.username == username || users.password == password || users.email == email){
+        alert("Login Successful")
+    }else{
+        alert("user not found")
+    }
+}
+
+</script>
+</html>

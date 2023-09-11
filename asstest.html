@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="p1">
+
+    </p> -->
+    <input type="text" id="result" readonly>
+    <button onclick="show('1')">1</button>
+    <button  onclick="operator">+</button>
+    <button onclick="show('3')">3</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="clearResult()">C</button>
+</body>
+<script>
+    let p1 = document.getElementById('p1');
+    let p2 = document.getElementById('result')
+
+    // let result = '';
+    // function show(a){
+    //     p1.innerHTML += a;
+    //     // document.getElementById("result").value = p1;
+        
+    // }
+    function show(a){
+        result += a;
+        document.getElementById("result").value = p2;
+        
+    }
+
+    // function operator(a){
+    //     p1.innerHTML = " " + a + " ";
+    //     operator = a
+    // }
+
+    // function clearResult(){
+    //     result = " ";
+    //     document.getElementById("result").value = result;
+        
+    // }
+    // function calculate(){
+    //     let sentence = input.innerHTML.trim();
+    //     let operands = sentence.split(' ' + operator + ' ');
+    
+    // let b = Number(operands[0]);
+    // let c = Number(operands[1]);
+    // switch(opeartor){
+    //     case'+':
+    //     result = b + c
+    //     break;
+    // }
+
+    // if(operator = +){
+    //     result = "b + c"
+    // }else if(operator = -){
+    //     result = "b - c"
+    // }
+}
+</script
+>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid lightgray;
+            /* box-shadow: ; */
+            border-radius: 8px;
+            margin-top: 5px;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+    </div>
+    <button onclick="car()">Card</button>
+    <!-- <button onclick="dark"></button> -->
+    <!-- //username,password,email,confirmpassword,register/submit
+    // if any input field is empty show field empty
+    // password match
+    //eye patch to show password/and hide//   -->
+</body>
+<script>
+    let card = document.getElementById("card")
+
+    card.style.display = "none";
+function car(){
+    if(card.style.display == "none"){
+      card.style.display = "block";
+    } else{
+        card.style.display = "none";
+    }
+
+    // card.style.display == "none"? card.style.display = " block" : card.style.display = "none"
+}
+</script>
+</html>

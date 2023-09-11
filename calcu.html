@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* background-color: #161515; */
+    background-image: url(..//pic/oliver-hae-h3pU3m-Eduk-unsplash.jpg);
+background-size: cover;
+    
+}
+
+
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 270px;
+}
+
+#p1 {
+    width: 220px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    background-color: #807d7d;
+    color: #fffdfd;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #807d7d;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #222020;
+    color: white;
+}
+</style>
+<body>
+    <div class="calculator">
+    <input type="text" id="p1" >
+    <div class="buttons">
+        <button class="button" onclick="display(1)">1</button>
+        <button class="button" onclick="display(2)">2</button>
+        <button class="button" onclick="display(3)">3</button>
+        <button class="button" onclick="add('+')">+</button>
+        <br>
+        <button class="button" onclick="display(4)">4</button>
+        <button class="button" onclick="display(5)">5</button>
+        <button class="button" onclick="display(6)">6</button>
+        <button class="button" onclick="min('-')">-</button>
+        <br>
+        <button class="button" onclick="display(7)">7</button>
+        <button class="button" onclick="display(8)">8</button>
+        <button class="button" onclick="display(9)">9</button>
+        <button class="button" onclick="mul('*')">*</button>
+        <button class="button" onclick="clearResult()">C</button>
+        <button class="button" onclick="display(0)">0</button>
+        <button class="button" onclick="display('.')">.</button>
+        <button class="button" onclick="div('/')">/</button>    
+        <button class="button" onclick="mod('%')">mod</button>
+       
+        <!-- Add more buttons for numbers and operators -->
+
+        <button class="button" onclick="e('**')">^</button>
+        
+        <button class="button" onclick="calculate('Math.sqrt()')">√</button>
+        <button class="button" onclick="calculate()">=</button>
+    </div>
+    </div>
+</body>
+<script>
+    let p1 = document.getElementById('p1'); 
+// let show =  " ";
+let dis1 ;
+let dis2 ;
+
+function display(number) {
+    p1.value += number;
+
+}
+
+
+function clearResult(){
+    p1.value = " ";  
+}
+ let addd;
+ let minn;
+ let mull;
+ let divv;
+ let modd;
+function add(a){
+    addd = a;
+    dis1 =  p1.value;
+    p1.value = '+' 
+}
+function min(b){
+    minn = b;
+    dis1 =  p1.value;
+    p1.value = '-' 
+}
+function mul(c){
+    mull = c;
+    dis1 =  p1.value;
+    p1.value = '*' 
+}
+function div(d){
+    divv = d;
+    dis1 =  p1.value;
+    p1.value = '/' 
+}
+
+function mod(e){
+    modd = e;
+    dis1 =  p1.value;
+    p1.value = '%' 
+}
+
+
+function calculate(){
+    dis2 = p1.value;
+    if(addd === '+'){
+        p1.value = Number(dis1) +  Number(dis2);
+    } else if(minn === '-'){
+        p1.value = Number(dis1) - Number(dis2)
+    } else if(mull === '*'){
+        p1.value = Number(dis1) * Number(dis2)
+    }  if(divv === '/'){
+        p1.value = Number(dis1) / Number(dis2)
+    }  if(modd === '%'){
+        p1.value = Number(dis1) % Number(dis2)
+    }
+}
+
+</script>
+</html>
