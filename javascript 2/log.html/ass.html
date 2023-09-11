@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #content{
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+    #amount{
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    
+</style>
+<body>
+    <button  onclick="show()">Select an option</button>
+    <div id="content" >
+        <p> MTN </p>
+        <p> GLO </p>
+        <p> ETISALAT </p>
+        <p> AIRTEL </p>
+    </div>
+    <button  onclick="showI()">Select an option</button>
+    <div id="amount" >
+        <p> 100 </p>
+        <p> 200 </p>
+        <p> 500 </p>
+        <p> 1000 </p>
+    </div>
+    <button> Generate </button>
+    <br>
+    <h1></h1>
+    <br>
+    <input type="text">
+    <button> Check </button>
+    <input type="text">
+    <button> Check </button>
+    <input type="text">
+    <button> Check </button>
+</body>
+<script>
+    function show(){
+    content.style.display = "block"
+}
+  function showI(){
+    amount.style.display = "block"
+}
+</script>
+</html>

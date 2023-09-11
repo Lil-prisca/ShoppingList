@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shopping.css">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+   <script src="shopping.js"></script>
+    <!-- <script src = "../bootstrap/js/bootstrap.min.js"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    /bootstrap/css/bootstrap.min.css
+    <div id="one" >
+        <h3 class="class-header text-center">SHOPING LIST</h3>
+       <div class="col p-3">
+        <input class="form-control" type="text" id="inp1" placeholder="ITEM">
+       </div>
+       <div class="mb p-3">
+        <input class="form-control" type="number" id="inp2" placeholder="PRICE">
+       </div>
+       <div class="mb p-3">
+        <input  class="form-control" type="number" id="inp3" placeholder="QUANTITY">
+       </div>
+        
+        <div id="tott" class="p-3">
+        <button  onclick="submit()" type="submit" class="btn btn-primary btn-block ">submit</button>
+        <p id="tot"></p>
+        </div>
+    </div>
+    <div id="shopList">
+        <!-- <div class="col p-3 shadow d-flex justify-content-between">
+            <p>Item: ${item}</p>
+            <p>Price: ${price},</p>
+            <p> Quantity: ${quantity}</p>
+            <button   type="submit" class="btn btn-sm  btn-primary btn-block mb-2  ">Edit</button>
+            <br>
+            <button   type="submit" class="btn btn-sm  btn-primary btn-block  mb-2">Delete</button> 
+        </div> -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1></h1>
+   <input id list="" type="text">
+</body>
+<script>
+    let lsi = document.getElementById("list")
+    let allList  = []
+    function saveList(){
+        allList.push(list.value)
+        localStorage.setItem("myList",allList);
+        getList()
+    }
+
+    function getList(){
+        let gotten = localStorage.getItem("mylist");
+        console.log(gotten);
+        showList.innerHTMl = gotten
+    }
+</script>
+</html>

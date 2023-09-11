@@ -134,13 +134,6 @@
  let confirmPassword = document.getElementById("confirmPassword").value;
 
 function sub(){
-        if (username.value == "" || password.value == "" || email.value == ""){
-            alert("input field can not be  empty")
-        } else if(password.value !== confirmPassword.value){
-            alert("password does not match")
-        } else if(password.value == confirmPassword.value) {
-            alert ("registration successful")
-        }
     let user = {
     user:username.value,
     password:password.value,
@@ -148,6 +141,15 @@ function sub(){
  }
  users.push(user);
  console.log(users)
+        if (username.value == "" || password.value == "" || email.value == ""){
+            alert("input field can not be  empty")
+        } else if(password.value !== confirmPassword.value){
+            alert("password does not match")
+            localStorage.setItem("UserInfo", JSON.stringify(users))
+        } else if(password.value == confirmPassword.value) {
+            alert ("registration successful")
+            localStorage.setItem("UserInfo", JSON.stringify(users))
+        }
 }
 function reg (){
     if(users.username == username || users.password == password || users.email == email){
